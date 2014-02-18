@@ -16,7 +16,16 @@ function tcode(){
 if (tmux has-session -t coding 2>/dev/null); then
 	tmux attach -t coding
 else
-	tmux new -s coding
+	tmux new-session -d -s coding -n Vim
+	tmux new-window -t coding -n Bash
+	tmux new-window -t coding -n Irssi
+	tmux new-window -t coding -n SSH
+
+	tmux send-keys -t coding:1 "vim" "C-m"
+	tmux send-keys -t coding:3 "irssi" "C-m"
+	tmux select-window -t coding:1
+
+	tmux attach-session -t coding
 fi
 }
 
