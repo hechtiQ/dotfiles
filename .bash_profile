@@ -5,6 +5,9 @@ if [ -f /etc/bashrc ]; then
 fi
 
 alias gc="git commit -a"
+alias ga="git add $@"
+alias gpush="git push $@"
+alias gpull="git pull $@"
 alias yumi="sudo yum install -y $@"
 alias yumup="sudo yum update -y"
 alias service="sudo service $@"
