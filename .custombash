@@ -4,6 +4,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+unset SSH_ASKPASS
 alias gc="git commit -a"
 alias ga="git add $@"
 alias gpush="git push $@"
