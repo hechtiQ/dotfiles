@@ -40,6 +40,8 @@ set smartcase
 set hidden
 
 "mappings
+:let mapleader = ","
+nnoremap <leader>= :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -71,6 +73,8 @@ let g:tmuxline_powerline_separators = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/.android/*,*/.cache/*,*/.eclim/*,*/.eclipse/*,*/msp430/*,*/.config/*
 
 "airline settings
 let g:airline#extensions#tabline#left_sep = ' '

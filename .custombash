@@ -12,6 +12,7 @@ alias gpull="git pull $@"
 alias yumi="sudo yum install -y $@"
 alias yumup="sudo yum update -y"
 alias service="sudo service $@"
+alias umgitstick="umount /run/media/yoram/GITSTICK"
 
 function tcode(){
 if (tmux has-session -t coding 2>/dev/null); then
