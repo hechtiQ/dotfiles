@@ -19,6 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'airblade/vim-gitgutter'
 
 
 "sets
@@ -40,12 +41,12 @@ set smartcase
 set hidden
 
 "mappings
-:let mapleader = ","
-nnoremap <leader>= :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+let mapleader = ","
+noremap <leader>= :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <S-J> <C-W><C-J>
+nnoremap <S-K> <C-W><C-K>
+nnoremap <S-L> <C-W><C-L>
+nnoremap <S-H> <C-W><C-H>
 command! Q q
 command! W w
 if has("gui_running")
@@ -88,6 +89,12 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_powerline_fonts=1
 
+"eclim settings
+let g:EclimPythonValidate = 0
+
+"Syntastic settings
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_pylint_exec = 'python3-pylint'
 " unicode symbols
 "let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'

@@ -12,6 +12,7 @@ alias gpull="git pull $@"
 alias yumi="sudo yum install -y $@"
 alias yumup="sudo yum update -y"
 alias service="sudo service $@"
+alias pylint="python3-pylint $@"
 alias umgitstick="umount /run/media/yoram/GITSTICK"
 
 function tcode(){
@@ -20,6 +21,7 @@ if (tmux has-session -t coding 2>/dev/null); then
 else
 	tmux new-session -d -s coding -n Vim
 	tmux new-window -t coding -n Bash
+	tmux split-window -t coding:2 -h -p 50
 	tmux new-window -t coding -n Irssi
 	tmux new-window -t coding -n SSH
 
