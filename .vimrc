@@ -1,25 +1,30 @@
+set nocompatible
+filetype off
+"Vundle setup
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+"Plugins
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-repeat'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
+
+
 syntax on
 filetype plugin indent on
 autocmd! bufwritepost .vimrc source %
 colorscheme hybrid
-
-"Vundle setup
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-
-"Bundles
-Bundle 'edkolev/tmuxline.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-repeat'
-Bundle 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/syntastic'
-Bundle 'sjl/gundo.vim'
-Bundle 'airblade/vim-gitgutter'
 
 
 "sets
