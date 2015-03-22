@@ -113,7 +113,8 @@
 	whitespace = fix
 
 [core]
-
+	#set editor to vim
+	editor = vim
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
