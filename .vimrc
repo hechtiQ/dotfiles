@@ -17,6 +17,7 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'https://github.com/msanders/snipmate.vim'
 
 call vundle#end()
 
@@ -36,9 +37,9 @@ set history=10000
 set undolevels=1000
 set backup
 set writebackup
-set directory=~/.vim/tmp/swap//
-set undodir=~/.vim/tmp/undo//
-set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap/
+set undodir=~/.vim/tmp/undo/
+set backupdir=~/.vim/tmp/backup/
 set relativenumber
 set splitbelow
 set splitright
