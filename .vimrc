@@ -45,6 +45,7 @@ set splitbelow
 set splitright
 set smartcase
 set hidden
+set matchpairs+=<:>
 
 "mappings
 let mapleader = ","
