@@ -48,7 +48,7 @@ set hidden
 set matchpairs+=<:>
 
 "mappings
-let mapleader = ","
+let mapleader = "\<Space>"
 noremap <leader>= :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nnoremap <S-J> <C-W><C-J>
 nnoremap <S-K> <C-W><C-K>
