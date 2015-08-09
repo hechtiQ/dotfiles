@@ -5,6 +5,9 @@ alias dnfi="sudo dnf install -y $@"
 alias dnfup="sudo dnf update -y"
 alias service="sudo service $@"
 
+#ip address alias stolen from mathiasbynens dotfiles
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
 function tcode(){
 if (tmux has-session -t coding 2>/dev/null); then
 	tmux attach -t coding
