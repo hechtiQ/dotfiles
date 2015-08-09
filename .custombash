@@ -1,12 +1,8 @@
 #backgroundcolor = #1c1c1c
 
 unset SSH_ASKPASS
-alias gc="git commit -a"
-alias ga="git add $@"
-alias gpush="git push $@"
-alias gpull="git pull $@"
-alias yumi="sudo yum install -y $@"
-alias yumup="sudo yum update -y"
+alias dnfi="sudo dnf install -y $@"
+alias dnfup="sudo dnf update -y"
 alias service="sudo service $@"
 
 function tcode(){
