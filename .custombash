@@ -4,6 +4,7 @@ unset SSH_ASKPASS
 alias dnfi="sudo dnf install -y $@"
 alias dnfup="sudo dnf update -y"
 alias service="sudo service $@"
+alias fsize="du -h -d 2"
 
 #ip address alias stolen from mathiasbynens dotfiles
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
