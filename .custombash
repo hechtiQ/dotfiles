@@ -1,8 +1,4 @@
 #backgroundcolor = #1c1c1c
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
 
 unset SSH_ASKPASS
 alias gc="git commit -a"
