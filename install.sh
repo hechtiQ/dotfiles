@@ -39,6 +39,16 @@ vymlinks(){
         ln -s $(dirname $LOC)/vim-hybrid/colors
     fi
 }
+
+vimstall(){
+    cd $(dirname $LOC)
+    hg clone https://vim.googlecode.com/hg/ vim
+    cd vim
+    hg pull
+    hg update
+    ./configure --with-features=huge --enable-multibyte
+    make install
+}
 dotlinks(){
     cd $hf
     ln -s $LOC/.custombash 
@@ -77,6 +87,13 @@ response=${response,,}
 if [[ $response =~ ^(yes|y)$ ]]
 then
     installSoftware
+fi
+
+read -r -p "Do you want to install vim from mercurial clone?[y/n]" response
+response=${response,,}
+if [[ $response =~ ^(yes|y)$ ]]
+then
+    vimstall
 fi
 
 read -r -p "Do you want to install embedded tooling for msp430 & arduino?[y/n]" response
