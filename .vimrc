@@ -46,6 +46,8 @@ set splitright
 set smartcase
 set hidden
 set matchpairs+=<:>
+set tabstop=4
+set shiftwidth=4
 
 "mappings
 let mapleader = "\<Space>"
