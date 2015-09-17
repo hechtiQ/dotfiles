@@ -55,7 +55,7 @@ dotlinks(){
     ln -s $LOC/.gitconfig 
     ln -s $LOC/.tmux.conf 
     ln -s $LOC/.vimrc 
-    echo "if [ -f ~/.custombash ]; then . ~/.custombash; fi" >> $hf.bash_profile
+    echo "if [ -f ~/.custombash ]; then . ~/.custombash; fi" >> $hf.bashrc
 
 }
 
