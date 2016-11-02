@@ -5,10 +5,15 @@ alias dnfi="sudo dnf install -y $@"
 alias dnfup="sudo dnf update -y"
 alias service="sudo service $@"
 alias fsize="du -h -d 2"
+#fix for fedora multi monitor setup where panel would be on wrong screen
+alias fixPanel="kquitapp5 plasmashell ; /usr/bin/plasmashell --shut-up &"
 
 #ip address alias stolen from mathiasbynens dotfiles
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
+function 4chandownload(){
+wget -q -O- "$1" | grep -Eo '<a\s+(?:[^>]*?\s+)?href="([^"]*)"' | grep -Eo 'i.4cdn.org/[^"]+' | uniq | xargs wget -nc
+}
 function tcode(){
 if (tmux has-session -t coding 2>/dev/null); then
 	tmux attach -t coding

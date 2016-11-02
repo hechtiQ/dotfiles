@@ -1,5 +1,5 @@
 LOC=`pwd`
-hf="/home/$SUDO_USER/"
+hf=$HOME/
 echo $LOC
 
 installSoftware() {
@@ -38,16 +38,24 @@ vymlinks(){
         fi
         ln -s $(dirname $LOC)/vim-hybrid/colors
     fi
+    if [ ! -d $hf.vim/bundle ]
+    then
+        mkdir -p $hf.vim/bundle
+	git clone git@github.com:VundleVim/Vundle.vim.git $hf.vim/bundle/Vundle.vim
+    fi
+    if [ ! -d $hf.vim/tmp ]
+    then
+        mkdir -p $hf.vim/tmp/{backup,swap,undo}
+    fi
 }
 
 vimstall(){
     cd $(dirname $LOC)
-    hg clone https://vim.googlecode.com/hg/ vim
+    git clone git@github.com:vim/vim.git vim
     cd vim
-    hg pull
-    hg update
+    git pull origin master
     ./configure --with-features=huge --enable-multibyte
-    make install
+    sudo make install
 }
 dotlinks(){
     cd $hf
@@ -64,9 +72,9 @@ embeddedInstall(){
     if [ ! -f /etc/udev/rules.d/99-ti-launchpad.rules ]
     then
         echo "ATTRS{idVendor}==\"0451\", ATTRS{idProduct}==\"f432\", MODE=\"0660\", GROUP=\"dialout\"" | tee /etc/udev/rules.d/99-ti-launchpad.rules >/dev/null
-        usermod -a -G dialout $SUDO_USER
+        sudo usermod -a -G dialout $USER
     fi
-    dnf install -y arduino arduino-core ino arduino-doc
+    sudo dnf install -y arduino arduino-core ino arduino-doc
     echo "Don't forget to download the energia IDE from energia.nu and to reboot for udev update"
 
 }
@@ -79,8 +87,8 @@ response=${response,,}
 if [[ $response =~ ^(yes|y)$ ]]
 then
     dotlinks
-    vymlinks
 fi
+
 
 read -r -p "Do you want to check for software in need of installation?[y/n]" response
 response=${response,,}
@@ -89,7 +97,14 @@ then
     installSoftware
 fi
 
-read -r -p "Do you want to install vim from mercurial clone?[y/n]" response
+read -r -p "Do you want to create symlinks for vim?[y/n]" response
+response=${response,,}
+if [[ $response =~ ^(yes|y)$ ]]
+then
+    vymlinks
+fi
+
+read -r -p "Do you want to install vim from github clone?[y/n]" response
 response=${response,,}
 if [[ $response =~ ^(yes|y)$ ]]
 then
