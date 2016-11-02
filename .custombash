@@ -31,7 +31,7 @@ vman() {
 	if [ $# -eq 0 ]; then
 		/usr/bin/man
 	else
-		if man -w $* >/dev/null 2>/dev/null
+		if /usr/bin/man -w $* >/dev/null 2>/dev/null
 		then
 			/usr/bin/man $* | col -b | vim -c 'set ft=man nomod' -
 		else
