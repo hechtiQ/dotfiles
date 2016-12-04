@@ -167,7 +167,7 @@
 	default = matching
 
 [help]
-    autocorrect = 1 #fucking magic!
+	autocorrect = 10
 
 #Kudos for (copied from):
 #http://git-scm.com/book/en/Customizing-Git-Git-Configuration
