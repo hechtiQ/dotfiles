@@ -9,7 +9,6 @@ gdb
 ctags
 make
 tmux
-wemux
 wget
 curl
 mercurial
@@ -20,9 +19,5 @@ scala
 sbt
 python3
 python3-pip
-postgresql
-postgresql-server
-android-tools
-irssi
-ncurses-devel
-ncurses
+docker
+docker-compose
