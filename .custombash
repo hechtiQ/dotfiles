@@ -4,33 +4,9 @@ unset SSH_ASKPASS
 alias dnfi="sudo dnf install -y $@"
 alias dnfup="sudo dnf update -y"
 alias service="sudo service $@"
-alias fsize="du -h -d 2"
+
 #fix for fedora multi monitor setup where panel would be on wrong screen
 alias fixPanel="kquitapp5 plasmashell ; /usr/bin/plasmashell --shut-up &"
-
-#ip address alias stolen from mathiasbynens dotfiles
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-function 4chandownload(){
-wget -q -O- "$1" | grep -Eo '<a\s+(?:[^>]*?\s+)?href="([^"]*)"' | grep -Eo 'i.4cdn.org/[^"]+' | uniq | xargs wget -nc
-}
-function tcode(){
-if (tmux has-session -t coding 2>/dev/null); then
-	tmux attach -t coding
-else
-	tmux new-session -d -s coding -n Vim
-	tmux new-window -t coding -n Bash
-	tmux split-window -t coding:2 -h -p 50
-	tmux new-window -t coding -n Irssi
-	tmux new-window -t coding -n SSH
-
-	tmux send-keys -t coding:1 "vim" "C-m"
-	tmux send-keys -t coding:3 "irssi" "C-m"
-	tmux select-window -t coding:1
-
-	tmux attach-session -t coding
-fi
-}
 
 vman() {
 	if [ $# -eq 0 ]; then
@@ -45,6 +21,7 @@ vman() {
 	fi
 }
 alias man='vman'
+
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
